@@ -15,7 +15,7 @@ const Footer = () => {
           <Image
             boxSize="100px"
             objectFit="contain"
-            src={property.imageUrl}
+            src="http://icentre.iiitkottayam.ac.in/img/logo-alt.png"
             alt="image"
           />
           <Flex w="100%" justify="center" my="10">
