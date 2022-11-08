@@ -99,17 +99,39 @@ const Navbar = () => {
       top="0"
       background="white"
       borderBottom="1px solid #EEE"
-      boxShadow="0 1px 2px 0 rgba(0, 0, 0, 0.05)"
+      shadow="sm"
+      zIndex="999"
     >
       <Flex w="100%" maxW="6xl" justify="space-between" align="center">
-        <Image
-          boxSize="3.75rem"
-          width="3.75rem"
-          height="3.75rem"
-          objectFit="contain"
-          src="/assets/logos/nlogo.png"
-          alt="logo"
-        />
+        {/* Logo */}
+        <Link to="/">
+          <Hide above="lg">
+            <Image
+              boxSize="2.75rem"
+              width="2.75rem"
+              height="2.75rem"
+              objectFit="contain"
+              src="/assets/logos/nlogo.png"
+              alt="logo"
+              _hover={{
+                opacity: "0.8",
+              }}
+            />
+          </Hide>
+          <Show above="lg">
+            <Image
+              boxSize="3.75rem"
+              width="3.75rem"
+              height="3.75rem"
+              objectFit="contain"
+              src="/assets/logos/nlogo.png"
+              alt="logo"
+              _hover={{
+                opacity: "0.8",
+              }}
+            />
+          </Show>
+        </Link>
         {/* Renders above lg */}
         <Show above="lg">
           <Flex gap="4">
@@ -124,11 +146,9 @@ const Navbar = () => {
               </MenuButton>
               <MenuList>
                 {AboutUsList.map((item, index) => (
-                  <MenuItem key={index}>
-                    <Link style={{ width: "100%" }} to={item.link}>
-                      {item.title}
-                    </Link>
-                  </MenuItem>
+                  <Link key={index} style={{ width: "100%" }} to={item.link}>
+                    <MenuItem>{item.title}</MenuItem>
+                  </Link>
                 ))}
               </MenuList>
             </Menu>
@@ -140,11 +160,9 @@ const Navbar = () => {
               </MenuButton>
               <MenuList>
                 {NewsEventsList.map((item, index) => (
-                  <MenuItem key={index}>
-                    <Link style={{ width: "100%" }} to={item.link}>
-                      {item.title}
-                    </Link>
-                  </MenuItem>
+                  <Link key={index} style={{ width: "100%" }} to={item.link}>
+                    <MenuItem>{item.title}</MenuItem>
+                  </Link>
                 ))}
               </MenuList>
             </Menu>
@@ -159,11 +177,9 @@ const Navbar = () => {
               </MenuButton>
               <MenuList>
                 {ApplyList.map((item, index) => (
-                  <MenuItem key={index}>
-                    <Link style={{ width: "100%" }} to={item.link}>
-                      {item.title}
-                    </Link>
-                  </MenuItem>
+                  <Link key={index} style={{ width: "100%" }} to={item.link}>
+                    <MenuItem>{item.title}</MenuItem>
+                  </Link>
                 ))}
               </MenuList>
             </Menu>
@@ -206,11 +222,9 @@ const Navbar = () => {
                       <AccordionPanel>
                         <Flex flexDirection={"column"}>
                           {AboutUsList.map((item, index) => (
-                            <Box key={index} py={1}>
-                              <Link to={item.link} onClick={onClose}>
-                                {item.title}
-                              </Link>
-                            </Box>
+                            <Link key={index} to={item.link} onClick={onClose}>
+                              <Box py={1}>{item.title}</Box>
+                            </Link>
                           ))}
                         </Flex>
                       </AccordionPanel>
@@ -222,11 +236,9 @@ const Navbar = () => {
                       <AccordionPanel>
                         <Flex flexDirection={"column"}>
                           {NewsEventsList.map((item, index) => (
-                            <Box key={index} py={1}>
-                              <Link to={item.link} onClick={onClose}>
-                                {item.title}
-                              </Link>
-                            </Box>
+                            <Link key={index} to={item.link} onClick={onClose}>
+                              <Box py={1}>{item.title}</Box>
+                            </Link>
                           ))}
                         </Flex>
                       </AccordionPanel>
@@ -248,11 +260,9 @@ const Navbar = () => {
                       <AccordionPanel>
                         <Flex flexDirection={"column"}>
                           {ApplyList.map((item, index) => (
-                            <Box key={index} py={1}>
-                              <Link to={item.link} onClick={onClose}>
-                                {item.title}
-                              </Link>
-                            </Box>
+                            <Link key={index} to={item.link} onClick={onClose}>
+                              <Box py={1}>{item.title}</Box>
+                            </Link>
                           ))}
                         </Flex>
                       </AccordionPanel>
